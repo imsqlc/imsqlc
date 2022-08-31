@@ -1,7 +1,5 @@
-![image (1)](https://user-images.githubusercontent.com/102065202/161145024-79b9056b-d683-42e7-adc6-d421eba2c736.jpg)
 
-
- 👋 Hi, I’m "@uwnkm".
+ 👋 Hi, I’m "imsqlc".
  
 ---
 
@@ -20,5 +18,4 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 
 👨🏻‍💻 How to contact me: <p><a href="https://t.me/imsqlc">💬Telegram</a></p>
     
-![image (1)](https://user-images.githubusercontent.com/102065202/161145024-79b9056b-d683-42e7-adc6-d421eba2c736.jpg)
 
