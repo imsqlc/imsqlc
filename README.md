@@ -1,7 +1,7 @@
 ![image (1)](https://user-images.githubusercontent.com/102065202/161145024-79b9056b-d683-42e7-adc6-d421eba2c736.jpg)
 
 
- 👋 Hi, I’m Ruslan Mamedov "@uwnkm".
+ 👋 Hi, I’m "@uwnkm".
  
 ---
 
