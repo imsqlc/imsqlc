@@ -16,6 +16,6 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 
 ---
 
-👨🏻‍💻 How to contact me: <p><a href="https://t.me/sladw">💬Telegram</a></p>
+👨🏻‍💻 How to contact me: <p><a href="https://t.me/devujs">💬Telegram</a></p>
     
 
