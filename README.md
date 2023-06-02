@@ -115,3 +115,34 @@ int main() {
 ```
 
 В этой версии программы добавлены функции сравнения соответствующих полей структуры `Shop`. Затем для каждого типа запроса вызывается функция `copy_if()`, которая создает новый вектор, содержащий только элементы, удовлетворяющие требованию запроса. Если количество элементов равно 1, то выводится информация о магазине. Если количество элементов равно 0, то выводится сообщение "Магазин не найден".
+
+
+
+Это можно сделать, добавив строку #include <locale> и вызывая функции setlocale в начале main ():
+
+c++
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <locale>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+
+    vector<string> words = {"мороженое", "молоко", "сыр", "кефир"};
+
+    string input;
+    cout << "Введите слово: ";
+    cin >> input;
+
+    if (find(words.begin(), words.end(), input) != words.end()) {
+        cout << "Слово найдено!" << endl;
+    } else {
+        cout << "Слово не найдено!" << endl;
+    }
+
+    return 0;
+}
