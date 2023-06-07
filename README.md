@@ -37,21 +37,15 @@ private:
     string phone;
 public:
     Shop() : direction(""), number(0), address(""), phone("") {
-        cout << "Вызван конструктор по умолчанию" << endl;  // конструктор по умолчанию
+        // конструктор по умолчанию
     }
 
-    Shop(const string& d, const int n, const string& a, const string& p)
-        : direction(d), number(n), address(a), phone(p) {
-        cout << "Вызван конструктор с параметрами" << endl;  // конструктор с параметрами
-    }
-
-    Shop(const Shop& other)
-        : direction(other.direction), number(other.number), address(other.address), phone(other.phone) {
-        cout << "Вызван конструктор копирования" << endl;  // конструктор копирования
+    Shop(const string& d, int n, const string& a, const string& p) : direction(d), number(n), address(a), phone(p) {
+        // конструктор с параметрами
     }
 
     ~Shop() {
-        cout << "Вызван деструктор" << endl;  // деструктор
+        // деструктор
     }
 
     bool compareDirections(const string& direction) const {
@@ -92,23 +86,64 @@ int main() {
         Shop("мебельный", 3, "ул. Гагарина, 20", "+7 (999) 111-22-33")
     };
 
-    // вызов конструктора по умолчанию
-    Shop emptyShop;
+    // Запросы по направленности магазина
+    string direction;
+    cout << "Введите направленность магазина: ";
+    cin >> direction;
+    cout << endl;
 
-    // вызов конструктора копирования
-    Shop copiedShop = allShops[0];
+    vector<Shop> filteredDirection;
+    copy_if(allShops.begin(), allShops.end(), back_inserter(filteredDirection), [direction](Shop shop) { return shop.compareDirections(direction); });
 
-    // вызов конструктора с параметрами
-    Shop newShop("рыбный", 4, "ул. Рыбная, 5", "+7 (999) 222-33-44");
+    for (auto shop : filteredDirection) {
+        cout << "Магазин #" << shop.getNumber() << endl;
+        cout << "Направленность: " << shop.getDirection() << endl;
+        cout << "Адрес: " << shop.getAddress() << endl;
+        cout << "Телефон: " << shop.getPhone() << endl << endl;
+    }
+
+    // Запрос по номеру магазина
+    int shopNumber;
+    cout << "Введите номер магазина: ";
+    cin >> shopNumber;
+    cout << endl;
+
+    vector<Shop> filteredShopNumber;
+    copy_if(allShops.begin(), allShops.end(), back_inserter(filteredShopNumber), [shopNumber](Shop shop) { return shop.compareNumber(shopNumber); });
+
+    if (filteredShopNumber.size() == 1) {
+        Shop shop = filteredShopNumber[0];
+
+        cout << "Магазин #" << shop.getNumber() << endl;
+        cout << "Направленность: " << shop.getDirection() << endl;
+        cout << "Адрес: " << shop.getAddress() << endl;
+        cout << "Телефон: " << shop.getPhone() << endl << endl;
+    } else {
+        cout << "Магазин не найден" << endl << endl;
+    }
+
+    // Запрос по номеру телефона
+    string phone;
+    cout << "Введите номер телефона магазина: ";
+    cin >> phone;
+    cout << endl;
+
+    vector<Shop> filteredPhone;
+    copy_if(allShops.begin(), allShops.end(), back_inserter(filteredPhone), [phone](Shop shop) { return shop.comparePhone(phone); });
+
+    if (filteredPhone.size() == 1) {
+        Shop shop = filteredPhone[0];
+
+        cout << "Магазин #" << shop.getNumber() << endl;
+        cout << "Направленность: " << shop.getDirection() << endl;
+        cout << "Адрес: " << shop.getAddress() << endl;
+        cout << "Телефон: " << shop.getPhone() << endl << endl;
+    } else {
+        cout << "Магазин не найден" << endl << endl;
+    }
 
     return 0;
 }
 ```
 
-В этом примере мы добавили три конструктора: конструктор по умолчанию `Shop()`, конструктор с параметрами `Shop(const string& d, const int n, const string& a, const string& p)` и конструктор копирования `Shop(const Shop& other)`.
-
-Конструктор по умолчанию задает значения членов класса по умолчанию, а конструктор с параметрами инициализирует их переданными значениями.
-
-Конструктор копирования создает новый объект, который является копией объекта-аргумента. Он назначает значения членов класса объекта-аргумента членам класса нового объекта.
-
-Деструктор
+Здесь мы добавили конструктор по умолчанию `Shop()`, конструктор с параметрами `Shop(const string& d, int n, const string& a, const string& p)` и деструктор Шоп `~Shop()`. В остальном код остался неизменным.
