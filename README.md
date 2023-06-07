@@ -32,5 +32,5 @@ for (const auto& supermarket : supermarkets) {
 
 
 Замените этот код на соответствующий участок в вашем коде, и это должно решить проблему. 28f64b9c11a9accaabcce4e8e89210eb
-
+http://justnotepad.com/ru/get/28f64b9c11a9accaabcce4e8e89210eb
 Если у вас возникнут дополнительные вопросы, пожалуйста, не стесняйтесь их задавать.
