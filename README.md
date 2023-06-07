@@ -18,8 +18,7 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 
 👨🏻‍💻 How to contact me: <p><a href="https://t.me/devuejs">💬Telegram</a></p>
 
-<code> 
-
+'''
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -97,7 +96,6 @@ public:
     }
 };
 
-
 int main() {
     vector<Shop> shops;
     shops.push_back(Shop("Север", 1, "ул. Главная, 123", "555-1234"));
@@ -125,4 +123,4 @@ int main() {
     return 0;
 }
 
-<code>
+'''
