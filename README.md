@@ -19,7 +19,7 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 👨🏻‍💻 How to contact me: <p><a href="https://t.me/devuejs">💬Telegram</a></p>
 
 
-Ой, я снова что-то упустил. Извините за это. Вот полный код, который включает в себя классы "Shop" и "Supermarket", а также функцию main, которая использует объекты классов для фильтрации и отображения информации о магазинах и супермаркетах:
+Прошу прощения за это. Вот код с русскими кавычками:
 
 #include <iostream>
 #include <vector>
@@ -100,12 +100,12 @@ public:
 
 int main() {
     vector<Shop> shops;
-    shops.push_back(Shop("North", 1, "123 Main St", "555-1234"));
-    shops.push_back(Shop("South", 2, "456 Elm St", "555-5678"));
-    shops.push_back(Shop("East", 3, "789 Oak St", "555-9012"));
-    shops.push_back(Supermarket("West", 4, "321 Pine St", "555-3456", 10, 50));
+    shops.push_back(Shop("Север", 1, "ул. Главная, 123", "555-1234"));
+    shops.push_back(Shop("Юг", 2, "ул. Вязов, 456", "555-5678"));
+    shops.push_back(Shop("Восток", 3, "ул. Дубовая, 789", "555-9012"));
+    shops.push_back(Supermarket("Запад", 4, "ул. Сосновая, 321", "555-3456", 10, 50));
 
-    cout << "All shops:" << endl;
+    cout << "Все магазины:" << endl;
     for (const auto& shop : shops) {
         cout << shop.getDirection() << " " << shop.getNumber() << " " << shop.getAddress() << " " << shop.getPhone() << endl;
     }
@@ -117,7 +117,7 @@ int main() {
         }
     }
 
-    cout << "Supermarkets only:" << endl;
+    cout << "Только супермаркеты:" << endl;
     for (const auto& supermarket : supermarkets) {
         cout << supermarket.getDirection() << " " << supermarket.getNumber() << " " << supermarket.getAddress() << " " << supermarket.getPhone() << " " << supermarket.getCashRegisters() << " " << supermarket.getEmployees() << endl;
     }
@@ -126,4 +126,5 @@ int main() {
 }
 
 
+Если у вас есть еще какие-либо вопросы, пожалуйста, не стесняйтесь задавать их мне.
 Если у вас есть какие-либо вопросы по этому коду, я буду рад ответить на них.
