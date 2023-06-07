@@ -17,15 +17,14 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 ---
 
 👨🏻‍💻 How to contact me: <p><a href="https://t.me/devuejs">💬Telegram</a></p>
-    
-Пример реализации класса `Shop` с использованием деструктора и нескольких конструкторов:
 
-```c++
+
+Ой, я снова что-то упустил. Извините за это. Вот полный код, который включает в себя классы "Shop" и "Supermarket", а также функцию main, которая использует объекты классов для фильтрации и отображения информации о магазинах и супермаркетах:
+
 #include <iostream>
-#include <string>
 #include <vector>
 #include <algorithm>
-#include <locale>
+#include <string>
 
 using namespace std;
 
@@ -36,31 +35,23 @@ private:
     string address;
     string phone;
 public:
-    Shop() : direction(""), number(0), address(""), phone("") {
-        // конструктор по умолчанию
+    Shop(string dir, int num, string addr, string ph) {
+        direction = dir;
+        number = num;
+        address = addr;
+        phone = ph;
     }
 
-    Shop(const string& d, int n, const string& a, const string& p) : direction(d), number(n), address(a), phone(p) {
-        // конструктор с параметрами
+    Shop() {
+        direction = "";
+        number = 0;
+        address = "";
+        phone = "";
     }
 
-    ~Shop() {
-        // деструктор
-    }
+    ~Shop() {}
 
-    bool compareDirections(const string& direction) const {
-        return this->direction == direction;
-    }
-
-    bool compareNumber(int number) const {
-        return this->number == number;
-    }
-
-    bool comparePhone(const string& phone) const {
-        return this->phone == phone;
-    }
-
-    const string& getDirection() const {
+    string getDirection() const {
         return direction;
     }
 
@@ -68,82 +59,71 @@ public:
         return number;
     }
 
-    const string& getAddress() const {
+    string getAddress() const {
         return address;
     }
 
-    const string& getPhone() const {
+    string getPhone() const {
         return phone;
+    }
+
+    bool operator==(const Shop& other) const {
+        return (direction == other.direction && number == other.number && address == other.address && phone == other.phone);
+    }
+};
+
+class Supermarket : public Shop {
+private:
+    int cash_registers;
+    int employees;
+public:
+    Supermarket(string dir, int num, string addr, string ph, int cr, int emp) : Shop(dir, num, addr, ph) {
+        cash_registers = cr;
+        employees = emp;
+    }
+
+    Supermarket() {
+        cash_registers = 0;
+        employees = 0;
+    }
+
+    ~Supermarket() {}
+
+    int getCashRegisters() const {
+        return cash_registers;
+    }
+
+    int getEmployees() const {
+        return employees;
     }
 };
 
 int main() {
-    setlocale(LC_ALL, "Russian");
+    vector<Shop> shops;
+    shops.push_back(Shop("North", 1, "123 Main St", "555-1234"));
+    shops.push_back(Shop("South", 2, "456 Elm St", "555-5678"));
+    shops.push_back(Shop("East", 3, "789 Oak St", "555-9012"));
+    shops.push_back(Supermarket("West", 4, "321 Pine St", "555-3456", 10, 50));
 
-    vector<Shop> allShops = {
-        Shop("автомагазин", 1, "ул. Ленина, 10", "+7 (999) 123-45-67"),
-        Shop("аптека", 2, "ул. Пушкина, 15", "+7 (999) 765-43-21"),
-        Shop("мебельный", 3, "ул. Гагарина, 20", "+7 (999) 111-22-33")
-    };
-
-    // Запросы по направленности магазина
-    string direction;
-    cout << "Введите направленность магазина: ";
-    cin >> direction;
-    cout << endl;
-
-    vector<Shop> filteredDirection;
-    copy_if(allShops.begin(), allShops.end(), back_inserter(filteredDirection), [direction](Shop shop) { return shop.compareDirections(direction); });
-
-    for (auto shop : filteredDirection) {
-        cout << "Магазин #" << shop.getNumber() << endl;
-        cout << "Направленность: " << shop.getDirection() << endl;
-        cout << "Адрес: " << shop.getAddress() << endl;
-        cout << "Телефон: " << shop.getPhone() << endl << endl;
+    cout << "All shops:" << endl;
+    for (const auto& shop : shops) {
+        cout << shop.getDirection() << " " << shop.getNumber() << " " << shop.getAddress() << " " << shop.getPhone() << endl;
     }
 
-    // Запрос по номеру магазина
-    int shopNumber;
-    cout << "Введите номер магазина: ";
-    cin >> shopNumber;
-    cout << endl;
-
-    vector<Shop> filteredShopNumber;
-    copy_if(allShops.begin(), allShops.end(), back_inserter(filteredShopNumber), [shopNumber](Shop shop) { return shop.compareNumber(shopNumber); });
-
-    if (filteredShopNumber.size() == 1) {
-        Shop shop = filteredShopNumber[0];
-
-        cout << "Магазин #" << shop.getNumber() << endl;
-        cout << "Направленность: " << shop.getDirection() << endl;
-        cout << "Адрес: " << shop.getAddress() << endl;
-        cout << "Телефон: " << shop.getPhone() << endl << endl;
-    } else {
-        cout << "Магазин не найден" << endl << endl;
+    vector<Supermarket> supermarkets;
+    for (const auto& shop : shops) {
+        if (auto* supermarket = dynamic_cast<const Supermarket*>(&shop)) {
+            supermarkets.push_back(*supermarket);
+        }
     }
 
-    // Запрос по номеру телефона
-    string phone;
-    cout << "Введите номер телефона магазина: ";
-    cin >> phone;
-    cout << endl;
-
-    vector<Shop> filteredPhone;
-    copy_if(allShops.begin(), allShops.end(), back_inserter(filteredPhone), [phone](Shop shop) { return shop.comparePhone(phone); });
-
-    if (filteredPhone.size() == 1) {
-        Shop shop = filteredPhone[0];
-
-        cout << "Магазин #" << shop.getNumber() << endl;
-        cout << "Направленность: " << shop.getDirection() << endl;
-        cout << "Адрес: " << shop.getAddress() << endl;
-        cout << "Телефон: " << shop.getPhone() << endl << endl;
-    } else {
-        cout << "Магазин не найден" << endl << endl;
+    cout << "Supermarkets only:" << endl;
+    for (const auto& supermarket : supermarkets) {
+        cout << supermarket.getDirection() << " " << supermarket.getNumber() << " " << supermarket.getAddress() << " " << supermarket.getPhone() << " " << supermarket.getCashRegisters() << " " << supermarket.getEmployees() << endl;
     }
 
     return 0;
 }
-```
 
-Здесь мы добавили конструктор по умолчанию `Shop()`, конструктор с параметрами `Shop(const string& d, int n, const string& a, const string& p)` и деструктор Шоп `~Shop()`. В остальном код остался неизменным.
+
+Если у вас есть какие-либо вопросы по этому коду, я буду рад ответить на них.
