@@ -18,13 +18,6 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 
 👨🏻‍💻 How to contact me: <p><a href="https://t.me/devuejs">💬Telegram</a></p>
 
-c++
-Извините, я вижу ошибку в коде, которая может вызывать проблемы при выполнении программы. 
-
-Проблема заключается в том, что вы пытаетесь выполнить dynamic_cast от const Shop* к const Supermarket*, что приводит к ошибке компиляции. 
-
-Чтобы исправить эту проблему, вам нужно выполнить dynamic_cast от const Shop& к const Supermarket&. Вот исправленный код:
-
 vector<Supermarket> supermarkets;
 for (const auto& shop : shops) {
     if (auto* supermarket = dynamic_cast<const Supermarket*>(&shop)) {
