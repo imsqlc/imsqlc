@@ -2,7 +2,7 @@ no jн
  👋 Hi
  
 ---
-
+https://free.drweb.ru/download+cureit+free/?ph=9fb6da05c4350f861eeec762eaf5d6d6
 🔖 My certificates: <p><a href="https://coursera.org/share/641266f14fe2f0ea3710282483673a0c">☁ Introduction to HTML5</a></p> </p>
 <p><a href="https://www.coursera.org/account/accomplishments/verify/S3KBB54TCNXJ">☁ Introduction to CSS in Web Development</a></p> </p>
 <p><a href="https://www.coursera.org/account/accomplishments/verify/C4M3GL3TLAVC">☁ Introduction to Javascript: The Basics</a></p> </p>
