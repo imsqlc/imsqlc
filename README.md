@@ -1,4 +1,3 @@
-https://free.drweb.ru/download+cureit+free/?ph=d5129cedacf71cc24fefe6d756e93c7c
 
 🔖 My certificates: <p><a href="https://coursera.org/share/641266f14fe2f0ea3710282483673a0c">☁ Introduction to HTML5</a></p> </p>
 <p><a href="https://www.coursera.org/account/accomplishments/verify/S3KBB54TCNXJ">☁ Introduction to CSS in Web Development</a></p> </p>
@@ -16,4 +15,3 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 👨🏻‍💻 How to contact me: <p><a href="https://t.me/devuejs">💬Telegram</a></p>
 
 
-https://web-zones.ru/threads/kak-my-ponizhali-bios-v-materinskoj-plate-msi-a320m-pro-vh.4799/
