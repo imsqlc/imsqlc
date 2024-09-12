@@ -15,4 +15,5 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 👨🏻‍💻 How to contact me: <p><a href="https://t.me/uwnkm">💬Telegram</a></p>
 
 
-https://utorrentgames.best/6708-autodesk-autocad-2012-sp2-russkaya-versiya.html
+
+ssconf://vanya.click/vanya/5ada5ece-4350-4665-8c39-c6269b975093
