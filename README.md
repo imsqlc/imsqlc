@@ -16,4 +16,4 @@ HTML, CSS, and Javascript for Web Developers</a></p> </p>
 
 
 
-ssconf://vanya.click/vanya/5ada5ece-4350-4665-8c39-c6269b975093
+ssconf://vanya.click/vanya/5ada5ece-4350-4665-8c39-c6269b975093 а
